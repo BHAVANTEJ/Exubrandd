@@ -39,22 +39,6 @@
   /* scroll progress */
   #progress{position:fixed;top:0;left:0;height:2px;background:var(--text);width:0%;z-index:60;transition:width .1s linear;}
 
-  /* header */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(10,10,11,.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line-soft);
-  }
-  .nav{display:flex;align-items:center;padding-block:14px;}
-  .brand{display:flex;align-items:center;gap:11px;min-width:0;}
-  .mark{width:30px;height:30px;flex:0 0 auto;object-fit:contain;}
-  .wordmark{font-family:var(--font-display);font-weight:800;font-size:13.5px;letter-spacing:.13em;white-space:nowrap;}
-  @media(min-width:480px){
-    .mark{width:34px;height:34px;}
-    .wordmark{font-size:15px;letter-spacing:.14em;}
-  }
-
   /* hero */
   .hero{position:relative;padding-top:min(14vh,110px);padding-bottom:88px;overflow:hidden;}
   .hero::before{
@@ -89,19 +73,7 @@
   }
   .hero-copy strong{color:var(--text);font-weight:600;}
 
-  /* contact / footer */
-  .section-tag{font-size:11.5px;font-weight:700;letter-spacing:.2em;color:var(--text-faint);}
-  .contact{
-    padding-block:110px;border-top:1px solid var(--line-soft);text-align:left;position:relative;overflow:hidden;
-  }
-  .contact::before{
-    content:"";position:absolute;left:-10%;bottom:-30%;width:60vw;max-width:640px;aspect-ratio:1;
-    border-radius:50%;border:1px solid var(--line);pointer-events:none;
-  }
-  .contact h2{
-    font-family:var(--font-display);font-weight:900;font-size:clamp(30px,5.5vw,58px);
-    letter-spacing:-.01em;max-width:680px;text-wrap:balance;
-  }
+  /* contact */
   .contact-row{
     margin-top:44px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;
   }
@@ -139,36 +111,17 @@
 
 <div id="progress"></div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">
-      <img class="mark" src="logo.png" alt="ExuBrandD">
-      <span class="wordmark">EXUBRANDD</span>
-    </a>
-  </div>
-</header>
-
 <main id="top">
 
   <!-- HERO -->
   <section class="hero">
     <img class="hero-ring" src="logo.png" alt="" aria-hidden="true">
     <div class="wrap">
-      <!--<p class="eyebrow">SERVICE DECK — 2026</p> -->
       <h1>We build businesses<br>that hold together.</h1>
       <p class="hero-tagline">BUILD &nbsp;·&nbsp; SCALE &nbsp;·&nbsp; EVOLVE</p>
       <div class="hero-copy">
         <p><strong>ExuBrandD</strong> works with businesses to build the strategy, systems, technology, and leadership capabilities required for their next stage of growth.</p>
-        <p>Whether you're scaling within your existing industry, moving vertically into new opportunities, or expanding across industries, we become the support layer behind that transition.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <!--<p class="section-tag">START A CONVERSATION</p>
-      <h2>Let's build the layer<br>behind your next stage.</h2> -->
       <div class="contact-row">
         <a class="contact-email" href="mailto:varun@exubrandd.com">varun@exubrandd.com</a>
         <a class="cta-ghost" href="mailto:varun@exubrandd.com">Email Us</a>
