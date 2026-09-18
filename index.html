@@ -10,13 +10,11 @@
 <style>
   :root{
     --bg:#0a0a0b;
-    --bg-alt:#0e0e10;
     --line:rgba(255,255,255,.10);
     --line-soft:rgba(255,255,255,.06);
     --text:#f3f2ee;
     --text-dim:#a3a19c;
     --text-faint:#5c5b57;
-    --surface:#131315;
     --font-display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
     --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     --wrap:1180px;
@@ -34,8 +32,7 @@
   }
   img,svg{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
-  ul{margin:0;padding:0;list-style:none;}
-  h1,h2,h3,h4,p{margin:0;}
+  h1,h2,p{margin:0;}
   .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:24px;}
   @media(min-width:900px){.wrap{padding-inline:48px;}}
 
@@ -49,7 +46,7 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line-soft);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:14px;gap:20px;}
+  .nav{display:flex;align-items:center;padding-block:14px;}
   .brand{display:flex;align-items:center;gap:11px;min-width:0;}
   .mark{width:30px;height:30px;flex:0 0 auto;object-fit:contain;}
   .wordmark{font-family:var(--font-display);font-weight:800;font-size:13.5px;letter-spacing:.13em;white-space:nowrap;}
@@ -57,48 +54,6 @@
     .mark{width:34px;height:34px;}
     .wordmark{font-size:15px;letter-spacing:.14em;}
   }
-  .nav-links{display:none;align-items:center;gap:36px;}
-  .nav-links a{font-size:12.5px;letter-spacing:.12em;font-weight:600;color:var(--text-dim);transition:color .2s;}
-  .nav-links a:hover{color:var(--text);}
-  @media(min-width:760px){.nav-links{display:flex;}}
-  .nav-right{display:flex;align-items:center;gap:14px;}
-  .cta-btn{
-    font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.1em;
-    background:var(--text);color:var(--bg);padding:11px 20px;border-radius:2px;
-    border:1px solid var(--text);white-space:nowrap;transition:opacity .2s,transform .2s;
-  }
-  .cta-btn:hover{opacity:.85;}
-  .nav-right .cta-btn{display:none;}
-  @media(min-width:560px){.nav-right .cta-btn{display:inline-block;}}
-  @media(min-width:560px){.menu-btn{display:none;}}
-  .menu-btn{
-    width:34px;height:34px;flex:0 0 auto;background:none;border:1px solid var(--line);
-    border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:5px;cursor:pointer;padding:0;
-  }
-  .menu-btn span{width:16px;height:1.5px;background:var(--text);transition:transform .25s,opacity .25s;}
-  .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-  .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0;}
-  .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-  .mobile-nav{
-    display:flex;flex-direction:column;gap:2px;
-    max-height:0;overflow:hidden;
-    border-top:0 solid var(--line-soft);
-    transition:max-height .3s ease;
-  }
-  .mobile-nav.open{max-height:260px;border-top-width:1px;}
-  .mobile-nav a{
-    padding:16px 24px;font-size:13.5px;font-weight:600;letter-spacing:.08em;
-    color:var(--text-dim);border-bottom:1px solid var(--line-soft);
-  }
-  .mobile-nav a.cta-btn{color:var(--bg);margin:14px 24px;border-bottom:none;}
-  @media(min-width:560px){.mobile-nav{display:none;}}
-  .cta-ghost{
-    font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.1em;
-    background:transparent;color:var(--text);padding:10px 19px;border-radius:2px;
-    border:1px solid var(--line);transition:border-color .2s,background .2s;
-  }
-  .cta-ghost:hover{border-color:var(--text);background:rgba(255,255,255,.04);}
 
   /* hero */
   .hero{position:relative;padding-top:min(14vh,110px);padding-bottom:88px;overflow:hidden;}
@@ -134,98 +89,8 @@
   }
   .hero-copy strong{color:var(--text);font-weight:600;}
 
-  /* section headers */
-  .section-tag{font-size:11.5px;font-weight:700;letter-spacing:.2em;color:var(--text-faint);}
-  .section-title{
-    font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.4vw,38px);
-    letter-spacing:-.01em;margin-top:14px;text-wrap:balance;
-  }
-
-  /* services overview */
-  .services-overview{padding-block:96px;border-top:1px solid var(--line-soft);}
-  .overview-head{display:flex;flex-direction:column;gap:14px;margin-bottom:56px;}
-  .service-row{
-    display:flex;align-items:center;gap:28px;padding-block:30px;
-    border-top:1px solid var(--line);cursor:pointer;
-    transition:background .25s;position:relative;
-  }
-  .service-row:last-child{border-bottom:1px solid var(--line);}
-  .service-row:hover{background:rgba(255,255,255,.035);}
-  .row-num{
-    font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--text-faint);
-    width:34px;flex:0 0 auto;
-  }
-  .row-title{
-    font-family:var(--font-display);font-weight:800;font-size:clamp(20px,3vw,32px);
-    letter-spacing:-.01em;flex:1 1 260px;
-    transition:transform .25s;
-  }
-  .service-row:hover .row-title{transform:translateX(6px);}
-  .row-sub{flex:1 1 260px;font-size:14.5px;color:var(--text-dim);}
-  .row-arrow{
-    width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-    transition:border-color .25s,transform .25s;
-  }
-  .service-row:hover .row-arrow{border-color:var(--text);transform:rotate(45deg);}
-  .row-arrow svg{width:15px;height:15px;}
-  @media(max-width:680px){
-    .service-row{flex-wrap:wrap;gap:10px 20px;}
-    .row-sub{order:3;flex-basis:100%;}
-  }
-
-  /* service detail sections */
-  .service{
-    padding-block:96px;border-top:1px solid var(--line-soft);
-    scroll-margin-top:76px;
-  }
-  .service.alt{background:var(--bg-alt);}
-  .service-head{
-    display:grid;grid-template-columns:auto 1fr;gap:28px 40px;align-items:start;
-  }
-  .s-index{
-    font-family:var(--font-display);font-weight:900;font-size:clamp(48px,7vw,96px);
-    line-height:.9;color:var(--text-faint);letter-spacing:-.02em;
-  }
-  .service-head h2{
-    font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.6vw,42px);
-    letter-spacing:-.01em;margin-top:14px;text-wrap:balance;max-width:640px;
-  }
-  .service-head .lead{
-    margin-top:20px;font-size:16px;line-height:1.7;color:var(--text-dim);max-width:600px;
-  }
-  @media(max-width:640px){
-    .service-head{grid-template-columns:1fr;}
-  }
-
-  .cat-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:36px 32px;margin-top:56px;padding-top:40px;border-top:1px solid var(--line);
-  }
-  .cat h4{
-    font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.14em;
-    color:var(--text-dim);margin-bottom:16px;
-  }
-  .cat li{
-    font-size:14.5px;line-height:1.9;color:var(--text);position:relative;padding-left:15px;
-  }
-  .cat li::before{
-    content:"";position:absolute;left:0;top:.85em;width:5px;height:1px;background:var(--text-faint);
-  }
-
-  .outcome{
-    margin-top:52px;padding-top:32px;border-top:1px solid var(--line);
-    display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;
-  }
-  .outcome-label{
-    font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--text-faint);flex:0 0 auto;
-  }
-  .outcome p{font-size:16.5px;font-weight:600;color:var(--text);max-width:600px;}
-  .tags{
-    margin-top:26px;font-size:11.5px;font-weight:700;letter-spacing:.2em;color:var(--text-faint);
-  }
-
   /* contact / footer */
+  .section-tag{font-size:11.5px;font-weight:700;letter-spacing:.2em;color:var(--text-faint);}
   .contact{
     padding-block:110px;border-top:1px solid var(--line-soft);text-align:left;position:relative;overflow:hidden;
   }
@@ -245,6 +110,12 @@
     border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .2s;
   }
   .contact-email:hover{border-color:var(--text);}
+  .cta-ghost{
+    font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.1em;
+    background:transparent;color:var(--text);padding:10px 19px;border-radius:2px;
+    border:1px solid var(--line);white-space:nowrap;transition:border-color .2s,background .2s;
+  }
+  .cta-ghost:hover{border-color:var(--text);background:rgba(255,255,255,.04);}
 
   footer{
     border-top:1px solid var(--line-soft);padding-block:28px;
@@ -274,22 +145,7 @@
       <img class="mark" src="logo.png" alt="ExuBrandD">
       <span class="wordmark">EXUBRANDD</span>
     </a>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav-right">
-      <a href="#contact" class="cta-btn">Start a Conversation</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
   </div>
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="cta-btn" style="text-align:center;">Start a Conversation</a>
-  </nav>
 </header>
 
 <main id="top">
@@ -305,408 +161,6 @@
         <p><strong>ExuBrandD</strong> works with businesses to build the strategy, systems, technology, and leadership capabilities required for their next stage of growth.</p>
         <p>Whether you're scaling within your existing industry, moving vertically into new opportunities, or expanding across industries, we become the support layer behind that transition.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- SERVICES OVERVIEW -->
-  <section class="services-overview" id="services">
-    <div class="wrap">
-      <div class="overview-head">
-        <p class="section-tag">OUR SERVICES</p>
-        <h2 class="section-title">Five ways we work with you.</h2>
-      </div>
-
-      <div class="service-list">
-        <a class="service-row" href="#s01">
-          <span class="row-num">01</span>
-          <span class="row-title">CONSULTING STRATEGY</span>
-          <span class="row-sub">Clarity for the next move.</span>
-          <span class="row-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#f3f2ee" stroke-width="1.8"><path d="M6 18L18 6M18 6H9M18 6V15"/></svg></span>
-        </a>
-        <a class="service-row" href="#s02">
-          <span class="row-num">02</span>
-          <span class="row-title">ERP IMPLEMENTATION</span>
-          <span class="row-sub">Systems that keep the business moving.</span>
-          <span class="row-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#f3f2ee" stroke-width="1.8"><path d="M6 18L18 6M18 6H9M18 6V15"/></svg></span>
-        </a>
-        <a class="service-row" href="#s03">
-          <span class="row-num">03</span>
-          <span class="row-title">DIGITAL PRODUCTS</span>
-          <span class="row-sub">Digital experiences built to perform.</span>
-          <span class="row-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#f3f2ee" stroke-width="1.8"><path d="M6 18L18 6M18 6H9M18 6V15"/></svg></span>
-        </a>
-        <a class="service-row" href="#s04">
-          <span class="row-num">04</span>
-          <span class="row-title">STRATEGIC PARTNERSHIP</span>
-          <span class="row-sub">An extended team for the journey.</span>
-          <span class="row-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#f3f2ee" stroke-width="1.8"><path d="M6 18L18 6M18 6H9M18 6V15"/></svg></span>
-        </a>
-        <a class="service-row" href="#s05">
-          <span class="row-num">05</span>
-          <span class="row-title">LEADERSHIP ADVISORY</span>
-          <span class="row-sub">Better decisions at the leadership table.</span>
-          <span class="row-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#f3f2ee" stroke-width="1.8"><path d="M6 18L18 6M18 6H9M18 6V15"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 01 CONSULTING STRATEGY -->
-  <section class="service" id="s01">
-    <div class="wrap">
-      <div class="service-head">
-        <span class="s-index">01</span>
-        <div>
-          <p class="section-tag">CONSULTING STRATEGY</p>
-          <h2>Turn complexity into a clear direction.</h2>
-          <p class="lead">We work with businesses to understand where they are, identify where they can go, and build a practical strategy to get there. Our consulting combines business strategy, digital strategy, and product thinking so that decisions aren't made in isolation.</p>
-        </div>
-      </div>
-
-      <div class="cat-grid">
-        <div class="cat">
-          <h4>BUSINESS STRATEGY</h4>
-          <ul>
-            <li>Business Model Development</li>
-            <li>Growth Strategy</li>
-            <li>Market Research</li>
-            <li>Competitive Analysis</li>
-            <li>Opportunity Assessment</li>
-            <li>Revenue Model Strategy</li>
-            <li>Market Expansion</li>
-            <li>New Business Verticals</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>GO-TO-MARKET</h4>
-          <ul>
-            <li>Customer Segmentation</li>
-            <li>ICP Definition</li>
-            <li>Positioning</li>
-            <li>GTM Strategy</li>
-            <li>Market Entry</li>
-            <li>Channel Strategy</li>
-            <li>Launch Planning</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>DIGITAL STRATEGY</h4>
-          <ul>
-            <li>Digital Transformation</li>
-            <li>Technology Roadmaps</li>
-            <li>Process Digitization</li>
-            <li>Automation Strategy</li>
-            <li>Digital Operating Models</li>
-            <li>Technology Stack Planning</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>PRODUCT STRATEGY</h4>
-          <ul>
-            <li>Product Discovery</li>
-            <li>Market Validation</li>
-            <li>MVP Definition</li>
-            <li>Product Roadmaps</li>
-            <li>Feature Prioritization</li>
-            <li>Customer Journey Mapping</li>
-            <li>PRD Development</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="outcome">
-        <span class="outcome-label">OUTCOME</span>
-        <p>A clear strategy, defined priorities, and an executable roadmap.</p>
-      </div>
-      <p class="tags">STRATEGY &nbsp;·&nbsp; GROWTH &nbsp;·&nbsp; DIGITAL</p>
-    </div>
-  </section>
-
-  <!-- 02 ERP IMPLEMENTATION -->
-  <section class="service alt" id="s02">
-    <div class="wrap">
-      <div class="service-head">
-        <span class="s-index">02</span>
-        <div>
-          <p class="section-tag">ERP IMPLEMENTATION</p>
-          <h2>Build the operating backbone behind growth.</h2>
-          <p class="lead">Growth creates complexity. We help businesses select, implement, integrate, and optimize ERP systems that bring their operations into one connected environment.</p>
-        </div>
-      </div>
-
-      <div class="cat-grid">
-        <div class="cat">
-          <h4>ERP ADVISORY</h4>
-          <ul>
-            <li>Business Requirement Analysis</li>
-            <li>Process Mapping</li>
-            <li>ERP Assessment</li>
-            <li>Platform Selection</li>
-            <li>Vendor Evaluation</li>
-            <li>Implementation Planning</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>IMPLEMENTATION</h4>
-          <ul>
-            <li>ERP Configuration</li>
-            <li>Module Setup</li>
-            <li>Workflow Configuration</li>
-            <li>Data Migration</li>
-            <li>User Roles & Permissions</li>
-            <li>Implementation Management</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>INTEGRATION</h4>
-          <ul>
-            <li>CRM</li>
-            <li>Finance</li>
-            <li>HR</li>
-            <li>Inventory</li>
-            <li>E-Commerce</li>
-            <li>Payment Systems</li>
-            <li>APIs & Third-Party Tools</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>OPTIMIZATION</h4>
-          <ul>
-            <li>Workflow Automation</li>
-            <li>Process Improvement</li>
-            <li>Reporting</li>
-            <li>System Audits</li>
-            <li>Performance Optimization</li>
-            <li>Continuous Improvement</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="outcome">
-        <span class="outcome-label">OUTCOME</span>
-        <p>Connected operations that can support the next stage of scale.</p>
-      </div>
-      <p class="tags">ERP &nbsp;·&nbsp; OPERATIONS &nbsp;·&nbsp; SYSTEMS</p>
-    </div>
-  </section>
-
-  <!-- 03 DIGITAL PRODUCTS -->
-  <section class="service" id="s03">
-    <div class="wrap">
-      <div class="service-head">
-        <span class="s-index">03</span>
-        <div>
-          <p class="section-tag">DIGITAL PRODUCTS</p>
-          <h2>Build the digital layer of your business.</h2>
-          <p class="lead">We design and develop websites, web applications, platforms, and digital products around the way your business actually operates. Not just something that looks good — something that works for the business.</p>
-        </div>
-      </div>
-
-      <div class="cat-grid">
-        <div class="cat">
-          <h4>WEB</h4>
-          <ul>
-            <li>Corporate Websites</li>
-            <li>Marketing Websites</li>
-            <li>Landing Pages</li>
-            <li>E-Commerce</li>
-            <li>Business Portals</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>WEB APPLICATIONS</h4>
-          <ul>
-            <li>Customer Portals</li>
-            <li>Internal Tools</li>
-            <li>Dashboards</li>
-            <li>Business Applications</li>
-            <li>Management Platforms</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>DIGITAL PRODUCTS</h4>
-          <ul>
-            <li>SaaS Products</li>
-            <li>MVPs</li>
-            <li>Product Platforms</li>
-            <li>Digital Tools</li>
-            <li>Customer-Facing Applications</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>PRODUCT EXPERIENCE</h4>
-          <ul>
-            <li>UI/UX</li>
-            <li>Information Architecture</li>
-            <li>Customer Journeys</li>
-            <li>Conversion Optimization</li>
-            <li>Product Experience Design</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>INTEGRATIONS</h4>
-          <ul>
-            <li>CRM</li>
-            <li>ERP</li>
-            <li>Payment Gateways</li>
-            <li>APIs</li>
-            <li>Automation</li>
-            <li>Third-Party Platforms</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="outcome">
-        <span class="outcome-label">OUTCOME</span>
-        <p>Digital products and platforms designed around business objectives.</p>
-      </div>
-      <p class="tags">WEB &nbsp;·&nbsp; PRODUCTS &nbsp;·&nbsp; PLATFORMS</p>
-    </div>
-  </section>
-
-  <!-- 04 STRATEGIC PARTNERSHIP -->
-  <section class="service alt" id="s04">
-    <div class="wrap">
-      <div class="service-head">
-        <span class="s-index">04</span>
-        <div>
-          <p class="section-tag">STRATEGIC PARTNERSHIP</p>
-          <h2>More than a consultant. More than a vendor.</h2>
-          <p class="lead">Some business challenges cannot be solved through a single project. Our Strategic Partnership model gives businesses access to an extended strategic and execution team that works alongside their internal leadership.</p>
-        </div>
-      </div>
-
-      <div class="cat-grid">
-        <div class="cat">
-          <h4>GROWTH SUPPORT</h4>
-          <ul>
-            <li>Growth Planning</li>
-            <li>Expansion Initiatives</li>
-            <li>New Market Development</li>
-            <li>New Business Verticals</li>
-            <li>Revenue Opportunities</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>BUSINESS DEVELOPMENT</h4>
-          <ul>
-            <li>Strategic Partnerships</li>
-            <li>Alliances</li>
-            <li>Channel Development</li>
-            <li>Business Opportunities</li>
-            <li>Partnership Strategy</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>EXECUTION</h4>
-          <ul>
-            <li>Strategic Initiative Management</li>
-            <li>Project Execution</li>
-            <li>Cross-Functional Coordination</li>
-            <li>Implementation Support</li>
-            <li>Business Operations Support</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>PMO</h4>
-          <ul>
-            <li>Program Planning</li>
-            <li>Project Management</li>
-            <li>Milestone Tracking</li>
-            <li>Resource Coordination</li>
-            <li>Performance Reviews</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>EMBEDDED SUPPORT</h4>
-          <ul>
-            <li>Ongoing Advisory</li>
-            <li>Strategic Problem Solving</li>
-            <li>Operational Support</li>
-            <li>Execution Support</li>
-            <li>Long-Term Retainers</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="outcome">
-        <span class="outcome-label">OUTCOME</span>
-        <p>A flexible extension of your team when the business needs more capacity, expertise, or execution power.</p>
-      </div>
-      <p class="tags">ADVISORY &nbsp;·&nbsp; EXECUTION &nbsp;·&nbsp; EMBEDDED</p>
-    </div>
-  </section>
-
-  <!-- 05 LEADERSHIP ADVISORY -->
-  <section class="service" id="s05">
-    <div class="wrap">
-      <div class="service-head">
-        <span class="s-index">05</span>
-        <div>
-          <p class="section-tag">LEADERSHIP ADVISORY</p>
-          <h2>A strategic perspective for the decisions that matter.</h2>
-          <p class="lead">As businesses grow, leadership decisions become increasingly interconnected. We work directly with founders and leadership teams to navigate growth, expansion, transformation, organization, and strategic change.</p>
-        </div>
-      </div>
-
-      <div class="cat-grid">
-        <div class="cat">
-          <h4>FOUNDER ADVISORY</h4>
-          <ul>
-            <li>Founder Strategy Sessions</li>
-            <li>Business Reviews</li>
-            <li>Growth Planning</li>
-            <li>Decision Support</li>
-            <li>Strategic Problem Solving</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>LEADERSHIP STRATEGY</h4>
-          <ul>
-            <li>Strategic Priorities</li>
-            <li>Leadership Operating Models</li>
-            <li>Management Frameworks</li>
-            <li>Business Planning</li>
-            <li>Performance Reviews</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>ORGANIZATIONAL DESIGN</h4>
-          <ul>
-            <li>Organizational Structure</li>
-            <li>Team Architecture</li>
-            <li>Role Definition</li>
-            <li>Responsibility Mapping</li>
-            <li>Delegation Frameworks</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>TRANSFORMATION</h4>
-          <ul>
-            <li>Business Transformation</li>
-            <li>Digital Transformation</li>
-            <li>Organizational Change</li>
-            <li>Scaling Challenges</li>
-            <li>Change Management</li>
-          </ul>
-        </div>
-        <div class="cat">
-          <h4>EXECUTIVE REVIEWS</h4>
-          <ul>
-            <li>Business Performance Reviews</li>
-            <li>Strategic Reviews</li>
-            <li>KPI Reviews</li>
-            <li>Decision Frameworks</li>
-            <li>Next-Stage Planning</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="outcome">
-        <span class="outcome-label">OUTCOME</span>
-        <p>Greater clarity around complex decisions and stronger alignment at the leadership level.</p>
-      </div>
-      <p class="tags">FOUNDER &nbsp;·&nbsp; LEADERSHIP &nbsp;·&nbsp; DECISIONS</p>
     </div>
   </section>
 
@@ -747,19 +201,6 @@
   document.addEventListener('scroll',onScroll,{passive:true});
   onScroll();
   toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-
-  var menuBtn=document.getElementById('menuBtn');
-  var mobileNav=document.getElementById('mobileNav');
-  menuBtn.addEventListener('click',function(){
-    var open=mobileNav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded',open?'true':'false');
-  });
-  mobileNav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      mobileNav.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded','false');
-    });
-  });
 </script>
 
 </body>
