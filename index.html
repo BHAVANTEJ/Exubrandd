@@ -75,19 +75,13 @@
 
   /* contact */
   .contact-row{
-    margin-top:44px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;
+    margin-top:44px;font-size:16px;line-height:1.65;color:var(--text-dim);
   }
   .contact-email{
-    font-family:var(--font-display);font-weight:700;font-size:clamp(16px,2.2vw,20px);
-    border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .2s;
+    font-weight:600;color:var(--text);
+    border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s;
   }
   .contact-email:hover{border-color:var(--text);}
-  .cta-ghost{
-    font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.1em;
-    background:transparent;color:var(--text);padding:10px 19px;border-radius:2px;
-    border:1px solid var(--line);white-space:nowrap;transition:border-color .2s,background .2s;
-  }
-  .cta-ghost:hover{border-color:var(--text);background:rgba(255,255,255,.04);}
 
   footer{
     border-top:1px solid var(--line-soft);padding-block:28px;
@@ -122,10 +116,7 @@
       <div class="hero-copy">
         <p><strong>ExuBrandD</strong> works with businesses to build the strategy, systems, technology, and leadership capabilities required for their next stage of growth.</p>
       </div>
-      <div class="contact-row">
-        <a class="contact-email" href="mailto:varun@exubrandd.com">varun@exubrandd.com</a>
-        <a class="cta-ghost" href="mailto:varun@exubrandd.com">Email Us</a>
-      </div>
+      <p class="contact-row">Reach out to <a class="contact-email" href="mailto:hello@exubrandd.com">hello@exubrandd.com</a> for queries.</p>
     </div>
   </section>
 
